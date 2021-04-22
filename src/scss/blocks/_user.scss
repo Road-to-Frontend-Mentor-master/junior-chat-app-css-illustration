@@ -1,0 +1,33 @@
+.user {
+  $white: #ffffff;
+  
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  
+  &__left {
+    margin-right: 1rem;
+  }
+
+  &__profile-picture {
+    width: 30px;
+    border-radius: 50%;
+    border: 2px solid white;
+    display: block;
+  }
+
+  &__name {
+    font-weight: 500;
+    font-size: .9rem;
+    color: $white;
+  }
+
+  &__status {
+    font-size: .8rem;
+    color: #{$white}aa;
+  }
+
+  &__right {
+
+  }
+}

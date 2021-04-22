@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+  font-family: $primary-font;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  background-color: $background;
+  padding: 4rem 2rem;
+  position: relative;
+  margin: 0;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 75vh;
+    border-bottom-right-radius: 200px;
+    background-color: $moderate-violet;
+    z-index: -1;
+  }
+}
+
+h2,
+p {
+  margin: 0;
+}

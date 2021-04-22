@@ -12,33 +12,34 @@ html(lang="en")
     link(rel="preconnect" href="https://fonts.gstatic.com")
     link(href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet")
     link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous")
+    link(rel="stylesheet", href="stylesheets/styles.css")
   body
     main.main
       article.chat
         header.chat__header
-          i.fas.fa-chevron-left
-          +user("avatar", "Samuel L. Jackson", "Available for Walk")
-          i.fas.fa-ellipsis-v
+          i.fas.fa-chevron-left.chat__left-icon
+          +user("fury", "Nick Fury", "Available for Walk")
+          i.fas.fa-ellipsis-v.chat__right-icon
         .chat__content
           +chat-message()
             p.chat__message That sounds great. I’d be happy with that.
-          .chat__message-container.chat__message-container--justify-start
+          +chat-message()
             p.chat__message Could you send over some pictures of your dog, please?
-          .chat__message-container.chat__message-container--justify-end
+          +chat-message("end")
             img.chat__image(src="images/dog-image-1.jpg", alt="Dog 1")
             img.chat__image(src="images/dog-image-2.jpg", alt="Dog 2")
             img.chat__image(src="images/dog-image-3.jpg", alt="Dog 3")
-          .chat__message-container.chat__message-container--justify-end
+          +chat-message("end")
             p.chat__message Here are a few pictures. She’s a happy girl!
-          .chat__message-container.chat__message-container--justify-end
+          +chat-message("end")
             p.chat__message Can you make it?
-          .chat__message-container.chat__message-container--justify-start
+          +chat-message()
             p.chat__message.
               She looks so happy! The time we discussed works. How long shall
               I take her out for?
-          .chat__message-container.chat__message-container--justify-start
+          +chat-message()
             +price("30 minute walk", "$29")
-          .chat__message-container.chat__message-container--justify-start
+          +chat-message()
             +price("1 hour walk", "$49")
         footer.chat__footer
       section.section

@@ -1,0 +1,92 @@
+* {
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  background-color: #f0f0f0;
+  padding: 4rem 2rem;
+  position: relative;
+  margin: 0;
+}
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 75vh;
+  border-bottom-right-radius: 200px;
+  background-color: #9241c8;
+  z-index: -1;
+}
+
+h2,
+p {
+  margin: 0;
+}
+
+.chat {
+  max-width: 475px;
+  margin: auto;
+  border-radius: 50px;
+  border: 15px solid white;
+  background-color: #f0f0f0;
+  overflow: hidden;
+}
+.chat__header {
+  position: relative;
+  padding: calc(50px / 2 + 1rem) 1rem 1rem;
+  background-image: linear-gradient(to left, #e942ff, #8838ff);
+  display: flex;
+  align-items: center;
+  border-radius: 0 0 7px 7px;
+}
+.chat__header::before {
+  content: "";
+  position: absolute;
+  width: 60%;
+  height: 50px;
+  border-radius: 20px;
+  background-color: white;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.chat__left-icon, .chat__right-icon {
+  color: white;
+}
+.chat__left-icon {
+  margin-right: 0.5rem;
+}
+.chat__right-icon {
+  margin-left: 0.5rem;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+.user__left {
+  margin-right: 1rem;
+}
+.user__profile-picture {
+  width: 30px;
+  border-radius: 50%;
+  border: 2px solid white;
+  display: block;
+}
+.user__name {
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #ffffff;
+}
+.user__status {
+  font-size: 0.8rem;
+  color: #ffffffaa;
+}

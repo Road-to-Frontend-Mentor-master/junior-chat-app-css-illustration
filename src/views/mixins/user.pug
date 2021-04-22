@@ -1,7 +1,7 @@
 mixin user(profilePicture, name, status)
   article.user
     .user__left
-      img.user__profile-picture(src=`images/${profilePicture}.jpg`, alt=`${name} profile picture`)
+      img.user__profile-picture(src=`images/${profilePicture}.webp`, alt=`${name} profile picture`)
     .user__right
       h2.user__name= name
       p.user__status= status

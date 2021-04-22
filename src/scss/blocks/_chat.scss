@@ -1,0 +1,47 @@
+.chat {
+  max-width: 475px;
+  margin: auto;
+  border-radius: 50px;
+  border: 15px solid white;
+  background-color: $background;
+  overflow: hidden;
+  
+  &__header {
+    $radius-size: 7px;
+    $pill-height: 50px;
+    
+    position: relative;
+    padding: calc(#{$pill-height} / 2 + 1rem) 1rem 1rem;
+    background-image: $violet-gradient;
+    display: flex;
+    align-items: center;
+    border-radius: 0 0 $radius-size $radius-size;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 60%;
+      height: $pill-height;
+      border-radius: ($pill-height / 2) - 5px;
+      background-color: white;
+      top: -($pill-height / 2);
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  $icon-margin: .5rem;
+
+  &__left-icon,
+  &__right-icon {
+    color: white;
+  }
+
+  &__left-icon {
+    margin-right: $icon-margin;
+  }
+
+  &__right-icon {
+    margin-left: $icon-margin;
+  }
+}
