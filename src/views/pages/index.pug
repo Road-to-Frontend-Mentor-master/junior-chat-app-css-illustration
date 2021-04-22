@@ -1,4 +1,6 @@
 include ../mixins/user
+include ../mixins/price
+include ../mixins/chat-message
 
 doctype html
 html(lang="en")
@@ -18,7 +20,7 @@ html(lang="en")
           +user("avatar", "Samuel L. Jackson", "Available for Walk")
           i.fas.fa-ellipsis-v
         .chat__content
-          .chat__message-container.chat__message-container--justify-start
+          +chat-message()
             p.chat__message That sounds great. I’d be happy with that.
           .chat__message-container.chat__message-container--justify-start
             p.chat__message Could you send over some pictures of your dog, please?
@@ -35,13 +37,9 @@ html(lang="en")
               She looks so happy! The time we discussed works. How long shall
               I take her out for?
           .chat__message-container.chat__message-container--justify-start
-            .price
-              i.far.fa-clock
-              p.price__time 30 minute walk #[span.price__money $29]
+            +price("30 minute walk", "$29")
           .chat__message-container.chat__message-container--justify-start
-            .price
-              i.far.fa-clock
-              p.price__time 30 minute walk #[span.price__money $29]
+            +price("1 hour walk", "$49")
         footer.chat__footer
       section.section
         h2.title Simple booking
