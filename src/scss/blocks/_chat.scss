@@ -12,10 +12,11 @@
     
     position: relative;
     padding: calc(#{$pill-height} / 2 + 1rem) 1rem 1rem;
-    background-image: $violet-gradient;
+    background-image: gradient("to left");
     display: flex;
     align-items: center;
     border-radius: 0 0 $radius-size $radius-size;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, .1);
 
     &::before {
       content: '';
@@ -43,5 +44,48 @@
 
   &__right-icon {
     margin-left: $icon-margin;
+  }
+
+  &__content {
+    padding: 1rem .75rem;
+  }
+
+  &__message-container {
+    display: flex;
+
+    &--justify-start {
+      justify-content: flex-start;
+    }
+
+    &--justify-end {
+      --message-background: white;
+      --message-color: #434343;
+
+      justify-content: flex-end;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: .75rem;
+    }
+  }
+
+  &__message {
+    padding: .5rem;
+    border-radius: 12px;
+    font-size: .8rem;
+    max-width: 70%;
+    line-height: 1.4;
+    background-color: var(--message-background, #{$pale-violet}44);
+    color: var(--message-color, $moderate-violet);
+  }
+
+  &__image {
+    width: 50px;
+    border-radius: 15px;
+    box-shadow: 0 10px 5px rgba(62, 39, 83, .05);
+
+    &:not(:last-child) {
+      margin-right: 0.75rem;
+    }
   }
 }
