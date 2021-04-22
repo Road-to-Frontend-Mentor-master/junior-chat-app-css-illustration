@@ -1,0 +1,51 @@
+include ../mixins/user
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Frontend Mentor - Chat app CSS illustration
+    link(rel="preconnect" href="https://fonts.gstatic.com")
+    link(href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet")
+    link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous")
+  body
+    main.main
+      article.chat
+        header.chat__header
+          i.fas.fa-chevron-left
+          +user("avatar", "Samuel L. Jackson", "Available for Walk")
+          i.fas.fa-ellipsis-v
+        .chat__content
+          .chat__message-container.chat__message-container--justify-start
+            p.chat__message That sounds great. I’d be happy with that.
+          .chat__message-container.chat__message-container--justify-start
+            p.chat__message Could you send over some pictures of your dog, please?
+          .chat__message-container.chat__message-container--justify-end
+            img.chat__image(src="images/dog-image-1.jpg", alt="Dog 1")
+            img.chat__image(src="images/dog-image-2.jpg", alt="Dog 2")
+            img.chat__image(src="images/dog-image-3.jpg", alt="Dog 3")
+          .chat__message-container.chat__message-container--justify-end
+            p.chat__message Here are a few pictures. She’s a happy girl!
+          .chat__message-container.chat__message-container--justify-end
+            p.chat__message Can you make it?
+          .chat__message-container.chat__message-container--justify-start
+            p.chat__message.
+              She looks so happy! The time we discussed works. How long shall
+              I take her out for?
+          .chat__message-container.chat__message-container--justify-start
+            .price
+              i.far.fa-clock
+              p.price__time 30 minute walk #[span.price__money $29]
+          .chat__message-container.chat__message-container--justify-start
+            .price
+              i.far.fa-clock
+              p.price__time 30 minute walk #[span.price__money $29]
+        footer.chat__footer
+      section.section
+        h2.title Simple booking
+        p.paragraph.
+          Stay in touch with our dog walkers through the chat interface. This makes it easy to 
+          discuss arrangements and make bookings. Once the walk has been completed you can rate 
+          your walker and book again all through the chat.
