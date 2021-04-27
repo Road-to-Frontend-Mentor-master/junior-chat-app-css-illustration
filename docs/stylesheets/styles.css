@@ -13,16 +13,25 @@ body {
   position: relative;
   margin: 0;
 }
-body::before {
+body::before, body::after {
+  --background: hsl(276, 55%, 52%);
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
   width: 50%;
   height: 75vh;
-  border-bottom-right-radius: 200px;
-  background-color: #9241c8;
   z-index: -1;
+  background-color: var(--background);
+}
+body::before {
+  top: 0;
+  left: 0;
+  border-bottom-right-radius: 200px;
+}
+body::after {
+  --background: hsl(276, 100%, 81%, .18);
+  bottom: 0;
+  right: 0;
+  border-top-left-radius: 200px;
 }
 
 h2,
@@ -37,6 +46,8 @@ p {
   border: 15px solid white;
   background-color: #f0f0f0;
   overflow: hidden;
+  margin-bottom: 4rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
 }
 .chat__header {
   position: relative;
@@ -181,4 +192,18 @@ p {
   border: none;
   background-color: #3e2753;
   color: white;
+}
+
+.title {
+  font-size: 2.25rem;
+  font-weight: 500;
+  color: #3e2753;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.paragraph {
+  text-align: center;
+  color: #a39daa;
+  line-height: 1.5;
 }

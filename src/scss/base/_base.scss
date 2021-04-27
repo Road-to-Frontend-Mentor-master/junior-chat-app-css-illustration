@@ -8,21 +8,37 @@ img {
 }
 
 body {
+  $background-figure-border-size: 200px;
+  
   background-color: $background;
   padding: 4rem 2rem;
   position: relative;
   margin: 0;
 
-  &::before {
+  &::before,
+  &::after {
+    --background: hsl(276, 55%, 52%);
+    
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
     width: 50%;
     height: 75vh;
-    border-bottom-right-radius: 200px;
-    background-color: $moderate-violet;
     z-index: -1;
+    background-color: var(--background);
+  }
+
+  &::before {
+    top: 0;
+    left: 0;
+    border-bottom-right-radius: $background-figure-border-size;
+  }
+
+  &::after {
+    --background: hsl(276, 100%, 81%, .18);
+    
+    bottom: 0;
+    right: 0;
+    border-top-left-radius: $background-figure-border-size;
   }
 }
 

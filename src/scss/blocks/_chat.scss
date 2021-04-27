@@ -5,6 +5,8 @@
   border: 15px solid white;
   background-color: $background;
   overflow: hidden;
+  margin-bottom: 4rem;
+  box-shadow: 0 20px 60px rgba(#000000, .2);
   
   &__header {
     $radius-size: 7px;
