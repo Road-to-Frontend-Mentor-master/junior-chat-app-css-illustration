@@ -14,31 +14,62 @@ body {
   padding: 4rem 2rem;
   position: relative;
   margin: 0;
+  min-height: 100vh;
 
   &::before,
   &::after {
-    --background: hsl(276, 55%, 52%);
+    --background: linear-gradient( to bottom, hsl(293, 100%, 63%), hsl(264, 100%, 61%) );;
+    --width: 50%;
+    --height: 75vh;
+    --left: 0;
+    --right: 0;
+    --border-radius: 0 0 200px 0;
     
     content: '';
     position: absolute;
-    width: 50%;
-    height: 75vh;
+    width: var(--width);
+    height: var(--height);
     z-index: -1;
-    background-color: var(--background);
+    background: var(--background);
+    border-radius: var(--border-radius);
+
+    @include from($desktop) {
+      --width: 500px;
+      --border-radius: 0 0 275px 275px;
+      --left: -100px;
+    }
   }
 
   &::before {
     top: 0;
-    left: 0;
-    border-bottom-right-radius: $background-figure-border-size;
+    left: var(--left);
   }
 
   &::after {
     --background: hsl(276, 100%, 81%, .18);
+    --border-radius: 200px 0 0 0;
     
     bottom: 0;
-    right: 0;
-    border-top-left-radius: $background-figure-border-size;
+    right: var(--right);
+
+    @include from($desktop) {
+      --right: -100px;
+      --border-radius: 250px 250px 0 0;
+    }
+  }
+
+  @include from($desktop) {
+    display: grid;
+    align-items: center;
+  }
+}
+
+main {
+  @include from($desktop) {
+    display: flex;
+    width: 1000px;
+    margin: auto;
+    align-items: center;
   }
 }
 

@@ -12,26 +12,60 @@ body {
   padding: 4rem 2rem;
   position: relative;
   margin: 0;
+  min-height: 100vh;
 }
 body::before, body::after {
-  --background: hsl(276, 55%, 52%);
+  --background: linear-gradient( to bottom, hsl(293, 100%, 63%), hsl(264, 100%, 61%) );
+  --width: 50%;
+  --height: 75vh;
+  --left: 0;
+  --right: 0;
+  --border-radius: 0 0 200px 0;
   content: "";
   position: absolute;
-  width: 50%;
-  height: 75vh;
+  width: var(--width);
+  height: var(--height);
   z-index: -1;
-  background-color: var(--background);
+  background: var(--background);
+  border-radius: var(--border-radius);
+}
+@media screen and (min-width: 1024px) {
+  body::before, body::after {
+    --width: 500px;
+    --border-radius: 0 0 275px 275px;
+    --left: -100px;
+  }
 }
 body::before {
   top: 0;
-  left: 0;
-  border-bottom-right-radius: 200px;
+  left: var(--left);
 }
 body::after {
   --background: hsl(276, 100%, 81%, .18);
+  --border-radius: 200px 0 0 0;
   bottom: 0;
-  right: 0;
-  border-top-left-radius: 200px;
+  right: var(--right);
+}
+@media screen and (min-width: 1024px) {
+  body::after {
+    --right: -100px;
+    --border-radius: 250px 250px 0 0;
+  }
+}
+@media screen and (min-width: 1024px) {
+  body {
+    display: grid;
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  main {
+    display: flex;
+    width: 1000px;
+    margin: auto;
+    align-items: center;
+  }
 }
 
 h2,
@@ -40,7 +74,8 @@ p {
 }
 
 .chat {
-  max-width: 475px;
+  max-width: 325px;
+  width: 100%;
   margin: auto;
   border-radius: 50px;
   border: 15px solid white;
@@ -118,6 +153,11 @@ p {
 }
 .chat__footer {
   padding: 0 1rem 1rem;
+}
+@media screen and (min-width: 1024px) {
+  .chat {
+    margin-bottom: 0;
+  }
 }
 
 .price {
@@ -198,12 +238,25 @@ p {
   font-size: 2.25rem;
   font-weight: 500;
   color: #3e2753;
-  text-align: center;
   margin-bottom: 2rem;
+}
+@media screen and (max-width: 1023px) {
+  .title {
+    text-align: center;
+  }
 }
 
 .paragraph {
-  text-align: center;
   color: #a39daa;
   line-height: 1.5;
+}
+@media screen and (max-width: 1023px) {
+  .paragraph {
+    text-align: center;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .paragraph {
+    max-width: 450px;
+  }
 }

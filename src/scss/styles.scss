@@ -1,8 +1,11 @@
 @import "./config/variables";
 
-@import "./base/base";
+@import "./mixins/from";
+@import "./mixins/to";
 
 @import "./functions/gradient";
+
+@import "./base/base";
 
 @import "./blocks/chat-message";
 @import "./blocks/chat";
