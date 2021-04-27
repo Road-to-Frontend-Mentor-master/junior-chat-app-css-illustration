@@ -24,21 +24,21 @@
         </header>
         <div class="chat__content">
           <div class="chat__message-container chat__message-container--justify-start">
-            <p class="chat__message">That sounds great. I’d be happy with that.</p>
+            <p class="chat__message chat__message--has-shadow">That sounds great. I’d be happy with that.</p>
           </div>
           <div class="chat__message-container chat__message-container--justify-start">
-            <p class="chat__message">Could you send over some pictures of your dog, please?</p>
+            <p class="chat__message chat__message--has-shadow">Could you send over some pictures of your dog, please?</p>
           </div>
           <div class="chat__message-container chat__message-container--justify-end"><img class="chat__image" src="images/dog-image-1.jpg" alt="Dog 1"><img class="chat__image" src="images/dog-image-2.jpg" alt="Dog 2"><img class="chat__image" src="images/dog-image-3.jpg" alt="Dog 3">
           </div>
           <div class="chat__message-container chat__message-container--justify-end">
-            <p class="chat__message">Here are a few pictures. She’s a happy girl!</p>
+            <p class="chat__message chat__message--has-shadow">Here are a few pictures. She’s a happy girl!</p>
           </div>
           <div class="chat__message-container chat__message-container--justify-end">
-            <p class="chat__message">Can you make it?</p>
+            <p class="chat__message chat__message--has-shadow">Can you make it?</p>
           </div>
           <div class="chat__message-container chat__message-container--justify-start">
-            <p class="chat__message">
+            <p class="chat__message chat__message--has-shadow">
               She looks so happy! The time we discussed works. How long shall
               I take her out for?
             </p>
@@ -54,7 +54,14 @@
             </div>
           </div>
         </div>
-        <footer class="chat__footer"></footer>
+        <footer class="chat__footer">
+          <form class="chat__form form">
+            <div class="form__field form__field--with-button">
+              <input class="form__input" id="message" type="text" name="message" placeholder="Type a message...">
+              <button class="form__input-button" type="submit"><i class="fas fa-chevron-right"></i></button>
+            </div>
+          </form>
+        </footer>
       </article>
       <section class="section">
         <h2 class="title">Simple booking</h2>

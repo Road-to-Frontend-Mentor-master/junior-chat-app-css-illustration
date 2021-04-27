@@ -22,19 +22,19 @@ html(lang="en")
           i.fas.fa-ellipsis-v.chat__right-icon
         .chat__content
           +chat-message()
-            p.chat__message That sounds great. I’d be happy with that.
+            p.chat__message.chat__message--has-shadow That sounds great. I’d be happy with that.
           +chat-message()
-            p.chat__message Could you send over some pictures of your dog, please?
+            p.chat__message.chat__message--has-shadow Could you send over some pictures of your dog, please?
           +chat-message("end")
             img.chat__image(src="images/dog-image-1.jpg", alt="Dog 1")
             img.chat__image(src="images/dog-image-2.jpg", alt="Dog 2")
             img.chat__image(src="images/dog-image-3.jpg", alt="Dog 3")
           +chat-message("end")
-            p.chat__message Here are a few pictures. She’s a happy girl!
+            p.chat__message.chat__message--has-shadow Here are a few pictures. She’s a happy girl!
           +chat-message("end")
-            p.chat__message Can you make it?
+            p.chat__message.chat__message--has-shadow Can you make it?
           +chat-message()
-            p.chat__message.
+            p.chat__message.chat__message--has-shadow.
               She looks so happy! The time we discussed works. How long shall
               I take her out for?
           +chat-message()
@@ -42,6 +42,10 @@ html(lang="en")
           +chat-message()
             +price("1 hour walk", "$49")
         footer.chat__footer
+          form.chat__form.form
+            .form__field.form__field--with-button
+              input#message.form__input(type="text", name="message" placeholder="Type a message...")
+              button.form__input-button(type="submit"): i.fas.fa-chevron-right
       section.section
         h2.title Simple booking
         p.paragraph.

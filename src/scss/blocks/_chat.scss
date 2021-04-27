@@ -54,6 +54,8 @@
     display: flex;
 
     &--justify-start {
+      --box-shadow-color: hsla(276, 100%, 81%, .46);
+      
       justify-content: flex-start;
     }
 
@@ -72,11 +74,15 @@
   &__message {
     padding: .5rem;
     border-radius: 12px;
-    font-size: .8rem;
+    font-size: .7rem;
     max-width: 70%;
     line-height: 1.4;
     background-color: var(--message-background, #{$pale-violet}44);
     color: var(--message-color, $moderate-violet);
+
+    &--has-shadow {
+      box-shadow: 0 2px 3px var(--box-shadow-color, rgba(#000000, .07));
+    }
   }
 
   &__image {
@@ -87,5 +93,9 @@
     &:not(:last-child) {
       margin-right: 0.75rem;
     }
+  }
+
+  &__footer {
+    padding: 0 1rem 1rem;
   }
 }

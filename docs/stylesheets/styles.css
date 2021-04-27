@@ -74,6 +74,7 @@ p {
   display: flex;
 }
 .chat__message-container--justify-start {
+  --box-shadow-color: hsla(276, 100%, 81%, .46);
   justify-content: flex-start;
 }
 .chat__message-container--justify-end {
@@ -87,11 +88,14 @@ p {
 .chat__message {
   padding: 0.5rem;
   border-radius: 12px;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   max-width: 70%;
   line-height: 1.4;
   background-color: var(--message-background, #d89eff44);
   color: var(--message-color, #9241c8);
+}
+.chat__message--has-shadow {
+  box-shadow: 0 2px 3px var(--box-shadow-color, rgba(0, 0, 0, 0.07));
 }
 .chat__image {
   width: 50px;
@@ -100,6 +104,9 @@ p {
 }
 .chat__image:not(:last-child) {
   margin-right: 0.75rem;
+}
+.chat__footer {
+  padding: 0 1rem 1rem;
 }
 
 .price {
@@ -149,4 +156,29 @@ p {
 .user__status {
   font-size: 0.8rem;
   color: #ffffffaa;
+}
+.form__field--with-button {
+  position: relative;
+}
+.form__input {
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  border-radius: 20px;
+  border: none;
+}
+.form__input-button {
+  position: absolute;
+  top: 50%;
+  right: 0.4rem;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  padding: 0.75rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: #3e2753;
+  color: white;
 }
